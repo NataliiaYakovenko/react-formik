@@ -1,7 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import LOG_IN_SCHEMA from "../../schemas/LogInSchema";
-import styles from './LogIn.module.scss'
+import styles from "./LogIn.module.scss";
+import cx from "classnames";
 
 const initialState = {
   email: "",
@@ -11,27 +12,47 @@ const initialState = {
 function LogIn(props) {
   const submitHandler = (values, actions) => {
     console.log(values);
-    actions.resetFormik();
+    actions.resetForm();
   };
 
   return (
-    <Formik className={styles.wrapper}
-    initialValues={initialState} 
-    onSubmit={submitHandler}
-    validationSchema={LOG_IN_SCHEMA}>
-
+    <Formik
+      initialValues={initialState}
+      onSubmit={submitHandler}
+      validationSchema={LOG_IN_SCHEMA}
+    >
       {(formikProps) => {
         return (
           <Form className={styles.wrapper}>
-            <h2>LOGIN TO YOUR  ACCOUNT</h2>
+            <h1 className={styles.title}>LOGIN TO YOUR ACCOUNT</h1>
 
-            <Field type="text" name="email" placeholder="email@com" />
-            <ErrorMessage name="email" component="p" />
+            <Field
+              className={cx(styles.input, {
+                [styles.inValidInput]:
+                  formikProps.touched.email && formikProps.errors.email,
+              })}
+              type="text"
+              name="email"
+              placeholder="email@com"
+            />
+            <ErrorMessage className={styles.error} name="email" component="p" />
 
-            <Field type="text" name="password" placeholder="your password" />
-            <ErrorMessage name="password" component="p" />
+            <Field
+              className={cx(styles.input, {
+                [styles.inValidInput]:
+                  formikProps.touched.password && formikProps.errors.password,
+              })}
+              type="password"
+              name="password"
+              placeholder="your password"
+            />
+            <ErrorMessage
+              className={styles.error}
+              name="password"
+              component="p"
+            />
 
-            <button>LOGIN</button>
+            <button className={styles.btnLogIn}>LOGIN</button>
           </Form>
         );
       }}

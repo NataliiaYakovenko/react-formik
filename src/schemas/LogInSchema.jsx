@@ -1,13 +1,14 @@
 import * as yup from "yup";
 
 const LOG_IN_SCHEMA = yup.object({
-  email: yup.string().required().email("Your email is invalid"),
+  email: yup.string().required().email("your email is invalid"),
   password: yup
     .string()
     .required()
+    .min(6,'min 6 symbols')
     .matches(
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-      "Password is invalid"
+      "password is invalid"
     ),
 });
 

@@ -1,7 +1,45 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: 0 auto;
+body {
+  background-color: rgb(77, 198, 238);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 90px auto 0; 
+  font-size: 25px;
+  color: white;
+
+  .title {
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+  }
+
+  .input {
+    padding: 4%;
+    margin: 1%;
+    font-size: 15px;
+    border: 3px solid green;
+  }
+
+  .inValidInput {
+    border: 3px solid red;
+  }
+
+  .error {
     font-size: 25px;
+    font-weight: bold;
+    border: 1px solid red;
+    padding: 2%;
+    text-align: center;
+  }
+  .btnLogIn {
+    padding: 3%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(25, 237, 166);
+    border-color: rgb(25, 237, 166);
+    color: white;
+  }
 }
