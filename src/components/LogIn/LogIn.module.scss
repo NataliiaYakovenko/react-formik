@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 40%;
-  margin: 90px auto 0; 
+  margin: 90px auto 0;
   font-size: 25px;
   color: white;
 
@@ -16,26 +16,44 @@ body {
     font-weight: bold;
   }
 
-  .input {
-    padding: 4%;
-    margin: 1%;
-    font-size: 15px;
-    border: 3px solid green;
+  .wrapperInput {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 10px;
+    position: relative;
+    &:has(.error) {
+      padding-bottom: 34px;
+    }
+
+    .input {
+      padding:30px;
+      font-size: 18px;
+      border: 2px solid green;
+      outline: none;
+      
+    }
+
+    .inValidInput {
+      border: 3px solid red;
+    }
+
+    .error {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      font-size: 15px;
+      font-weight: bold;
+      border: 1px solid red;
+      padding: 4px;
+      text-align: center;
+      margin: 0;
+    }
   }
 
-  .inValidInput {
-    border: 3px solid red;
-  }
-
-  .error {
-    font-size: 25px;
-    font-weight: bold;
-    border: 1px solid red;
-    padding: 2%;
-    text-align: center;
-  }
   .btnLogIn {
-    padding: 3%;
+    padding: 25px;
     font-size: 20px;
     font-weight: bold;
     background-color: rgb(25, 237, 166);

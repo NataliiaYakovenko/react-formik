@@ -26,31 +26,39 @@ function LogIn(props) {
           <Form className={styles.wrapper}>
             <h1 className={styles.title}>LOGIN TO YOUR ACCOUNT</h1>
 
-            <Field
-              className={cx(styles.input, {
-                [styles.inValidInput]:
-                  formikProps.touched.email && formikProps.errors.email,
-              })}
-              type="text"
-              name="email"
-              placeholder="email@com"
-            />
-            <ErrorMessage className={styles.error} name="email" component="p" />
+            <label className={styles.wrapperInput}>
+              <Field
+                className={cx(styles.input, {
+                  [styles.inValidInput]:
+                    formikProps.touched.email && formikProps.errors.email,
+                })}
+                type="text"
+                name="email"
+                placeholder="email@com"
+              />
+              <ErrorMessage
+                className={styles.error}
+                name="email"
+                component="p"
+              />
+            </label>
 
-            <Field
-              className={cx(styles.input, {
-                [styles.inValidInput]:
-                  formikProps.touched.password && formikProps.errors.password,
-              })}
-              type="password"
-              name="password"
-              placeholder="your password"
-            />
-            <ErrorMessage
-              className={styles.error}
-              name="password"
-              component="p"
-            />
+            <label className={styles.wrapperInput}>
+              <Field
+                className={cx(styles.input, {
+                  [styles.inValidInput]:
+                    formikProps.touched.password && formikProps.errors.password,
+                })}
+                type="password"
+                name="password"
+                placeholder="your password"
+              />
+              <ErrorMessage
+                className={styles.error}
+                name="password"
+                component="p"
+              />
+            </label>
 
             <button className={styles.btnLogIn}>LOGIN</button>
           </Form>
