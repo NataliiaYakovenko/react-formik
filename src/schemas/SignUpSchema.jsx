@@ -25,7 +25,7 @@ const SIGN_UP_SCHEMA = yup.object({
     .max(30, "max 30 symbols")
     .matches(/^[A-Z]/, "first letter must be capital"),
 
-  email: yup.string().required().email("your email is invalid"),
+  email: yup.string().required().email('check email'),
 
   password: yup
     .string()
@@ -43,7 +43,8 @@ const SIGN_UP_SCHEMA = yup.object({
     .matches(
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
       "password is invalid"
-    ),
+    )
+    .oneOf([yup.ref('password'),null], 'confirmation pass must match password')
 });
 
 export default SIGN_UP_SCHEMA;

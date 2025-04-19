@@ -11,6 +11,8 @@ const initialState = {
   email: "",
   password: "",
   confirmationPassword: "",
+  role: "",        
+  isAgree: false   
 };
 
 function SignUp(props) {
@@ -24,6 +26,7 @@ function SignUp(props) {
       initialValues={initialState}
       onSubmit={submitHandler}
       validationSchema={SIGN_UP_SCHEMA}
+      validateOnChange={true}
     >
       {(formikProps) => {
         return (
@@ -44,7 +47,6 @@ function SignUp(props) {
                   type="text"
                   name="firstName"
                   placeholder="Taras"
-                  autoFocus
                 />
                 <ErrorMessage
                   className={styles.error}
