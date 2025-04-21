@@ -1,5 +1,19 @@
 body {
   background-color: rgb(77, 198, 238);
+  position: relative;
+}
+
+.router {
+  color: white;
+  position: absolute;
+  left: 85%;
+  top: -50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 4px;
 }
 
 .wrapper {
@@ -12,7 +26,7 @@ body {
 
   .title {
     text-align: center;
-    font-size: 55px;
+    font-size: 40px;
     font-weight: bold;
   }
 
@@ -27,11 +41,10 @@ body {
     }
 
     .input {
-      padding:30px;
+      padding: 30px;
       font-size: 18px;
       border: 2px solid green;
       outline: none;
-      
     }
 
     .inValidInput {
@@ -59,5 +72,52 @@ body {
     background-color: rgb(25, 237, 166);
     border-color: rgb(25, 237, 166);
     color: white;
+  }
+}
+
+@media (max-width: 854px) {
+  .wrapper {
+    .title {
+      font-size: 30px;
+    }
+    .wrapperInput {
+      .input {
+        padding: 20px;
+        font-size: 15px;
+      }
+    }
+
+    .btnLogIn {
+      padding: 20px;
+      font-size: 15px;
+    }
+  }
+
+  .router {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 460px) {
+  .wrapper {
+    .title {
+      font-size: 20px;
+    }
+    .wrapperInput {
+      .input {
+        padding: 15px;
+        font-size: 12px;
+      }
+    }
+
+    .btnLogIn {
+      padding: 15px;
+      font-size: 12px;
+    }
+  }
+
+  .router {
+    font-size: 8px;
   }
 }

@@ -1,11 +1,25 @@
 body {
   background-color: rgb(77, 198, 238);
+  position: relative;
+}
+
+.router {
+  color: white;
+  position: absolute;
+  left: 85%;
+  top: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 4px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 700px;
   margin: 20px auto 0;
   font-size: 25px;
   color: white;
@@ -36,12 +50,12 @@ body {
       flex-direction: column;
       flex: 1;
       position: relative;
-      &:has(.error){
+      &:has(.error) {
         padding-bottom: 34px;
       }
 
       .input {
-        padding: 30px;
+        padding: 20px;
         font-size: 18px;
         border: 2px solid green;
         outline: none;
@@ -100,3 +114,91 @@ body {
     color: white;
   }
 }
+
+@media (max-width: 746px) {
+  .wrapper {
+    width: 400px;
+
+    .title {
+      font-size: 35px;
+    }
+    .notice {
+      font-size: 20px;
+    }
+
+    .wrapperGroup {
+      display: flex;
+      flex-direction: column;
+
+      .wrapperInput {
+        .input {
+          padding: 20px;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .radio {
+      font-size: 25px;
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .isAgree {
+      font-size: 15px;
+    }
+
+    .btnLogIn {
+      font-size: 20px;
+    }
+  }
+  .router {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 583px) {
+  .wrapper {
+    width: 300px;
+
+    .title {
+      font-size: 25px;
+    }
+    .notice {
+      font-size: 15px;
+    }
+
+    .wrapperGroup {
+ 
+      .wrapperInput {
+        .input {
+          padding: 10px;
+
+        }
+      }
+    }
+
+    .radio {
+      font-size: 20px;
+
+      p {
+        font-size: 13px;
+      }
+    }
+
+    .isAgree {
+      font-size: 13px;
+    }
+
+    .btnLogIn {
+      font-size: 15px;
+    }
+  }
+  .router {
+    font-size: 10px;
+    top: 3px;
+  }
+}
+

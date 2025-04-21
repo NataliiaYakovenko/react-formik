@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import LogIn from './components/LogIn/LogIn';
-import SignUp from './components/SignUp/SignUp';
+import App from './App';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <SignUp />
+    <App />
   </>
 );
 
