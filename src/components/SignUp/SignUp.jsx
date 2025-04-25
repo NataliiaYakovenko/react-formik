@@ -1,10 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import SIGN_UP_SCHEMA from "../../schemas/SignUpSchema";
-import styles from "./SignUp.module.scss";
+import stylesSign from "./SignUp.module.scss";
 import cx from "classnames";
-
-
 
 const initialState = {
   firstName: "",
@@ -25,7 +23,6 @@ function SignUp(props) {
 
   return (
     <>
-
       <Formik
         initialValues={initialState}
         onSubmit={submitHandler}
@@ -34,17 +31,17 @@ function SignUp(props) {
       >
         {(formikProps) => {
           return (
-            <Form className={styles.wrapper}>
-              <h1 className={styles.title}>CREATE AN ACCOUNT</h1>
-              <p className={styles.notice}>
+            <Form className={stylesSign.wrapper}>
+              <h1 className={stylesSign.title}>CREATE AN ACCOUNT</h1>
+              <p className={stylesSign.notice}>
                 We always keep your name and email adress private
               </p>
 
-              <div className={styles.wrapperGroup}>
-                <label className={styles.wrapperInput}>
+              <div className={stylesSign.wrapperGroup}>
+                <label className={stylesSign.wrapperInput}>
                   <Field
-                    className={cx(styles.input, {
-                      [styles.inValidInput]:
+                    className={cx(stylesSign.input, {
+                      [stylesSign.inValidInput]:
                         formikProps.touched.firstName &&
                         formikProps.errors.firstName,
                     })}
@@ -53,16 +50,16 @@ function SignUp(props) {
                     placeholder="Taras"
                   />
                   <ErrorMessage
-                    className={styles.error}
+                    className={stylesSign.error}
                     name="firstName"
                     component="p"
                   />
                 </label>
 
-                <label className={styles.wrapperInput}>
+                <label className={stylesSign.wrapperInput}>
                   <Field
-                    className={cx(styles.input, {
-                      [styles.inValidInput]:
+                    className={cx(stylesSign.input, {
+                      [stylesSign.inValidInput]:
                         formikProps.touched.lastName &&
                         formikProps.errors.lastName,
                     })}
@@ -71,18 +68,18 @@ function SignUp(props) {
                     placeholder="Shevchenko"
                   />
                   <ErrorMessage
-                    className={styles.error}
+                    className={stylesSign.error}
                     name="lastName"
                     component="p"
                   />
                 </label>
               </div>
 
-              <div className={styles.wrapperGroup}>
-                <label className={styles.wrapperInput}>
+              <div className={stylesSign.wrapperGroup}>
+                <label className={stylesSign.wrapperInput}>
                   <Field
-                    className={cx(styles.input, {
-                      [styles.inValidInput]:
+                    className={cx(stylesSign.input, {
+                      [stylesSign.inValidInput]:
                         formikProps.touched.nickName &&
                         formikProps.errors.nickName,
                     })}
@@ -91,16 +88,16 @@ function SignUp(props) {
                     placeholder="your nickname"
                   />
                   <ErrorMessage
-                    className={styles.error}
+                    className={stylesSign.error}
                     name="nickName"
                     component="p"
                   />
                 </label>
 
-                <label className={styles.wrapperInput}>
+                <label className={stylesSign.wrapperInput}>
                   <Field
-                    className={cx(styles.input, {
-                      [styles.inValidInput]:
+                    className={cx(stylesSign.input, {
+                      [stylesSign.inValidInput]:
                         formikProps.touched.email && formikProps.errors.email,
                     })}
                     type="text"
@@ -108,18 +105,18 @@ function SignUp(props) {
                     placeholder="email@com"
                   />
                   <ErrorMessage
-                    className={styles.error}
+                    className={stylesSign.error}
                     name="email"
                     component="p"
                   />
                 </label>
               </div>
 
-              <div className={styles.wrapperGroup}>
-                <label className={styles.wrapperInput}>
+              <div className={stylesSign.wrapperGroup}>
+                <label className={stylesSign.wrapperInput}>
                   <Field
-                    className={cx(styles.input, {
-                      [styles.inValidInput]:
+                    className={cx(stylesSign.input, {
+                      [stylesSign.inValidInput]:
                         formikProps.touched.password &&
                         formikProps.errors.password,
                     })}
@@ -128,16 +125,16 @@ function SignUp(props) {
                     placeholder="your password"
                   />
                   <ErrorMessage
-                    className={styles.error}
+                    className={stylesSign.error}
                     name="password"
                     component="p"
                   />
                 </label>
 
-                <label className={styles.wrapperInput}>
+                <label className={stylesSign.wrapperInput}>
                   <Field
-                    className={cx(styles.input, {
-                      [styles.inValidInput]:
+                    className={cx(stylesSign.input, {
+                      [stylesSign.inValidInput]:
                         formikProps.touched.confirmationPassword &&
                         formikProps.errors.confirmationPassword,
                     })}
@@ -146,14 +143,14 @@ function SignUp(props) {
                     placeholder="confirm your password"
                   />
                   <ErrorMessage
-                    className={styles.error}
+                    className={stylesSign.error}
                     name="confirmationPassword"
                     component="p"
                   />
                 </label>
               </div>
 
-              <label className={styles.radio}>
+              <label className={stylesSign.radio}>
                 <Field type="radio" name="role" value="buyer" checked />
                 Join As a Buyer
                 <p>
@@ -162,7 +159,7 @@ function SignUp(props) {
                 </p>
               </label>
 
-              <label className={styles.radio}>
+              <label className={stylesSign.radio}>
                 <Field type="radio" name="role" value="creative" />
                 Join As a Creative
                 <p>
@@ -171,13 +168,13 @@ function SignUp(props) {
                 </p>
               </label>
 
-              <label className={styles.isAgree}>
+              <label className={stylesSign.isAgree}>
                 <Field type="checkbox" name="isAgree" />
                 By clicking this checkbox, you agree to our{" "}
                 <span>Terms of Service</span>
               </label>
 
-              <button className={styles.btnLogIn}>LOGIN</button>
+              <button className={stylesSign.btnLogIn}>LOGIN</button>
             </Form>
           );
         }}

@@ -1,9 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import LOG_IN_SCHEMA from "../../schemas/LogInSchema";
-import styles from "./LogIn.module.scss";
+import stylesLog from "./LogIn.module.scss";
 import cx from "classnames";
-
 
 const initialState = {
   email: "",
@@ -18,7 +17,6 @@ function LogIn(props) {
 
   return (
     <>
- 
       <Formik
         initialValues={initialState}
         onSubmit={submitHandler}
@@ -26,13 +24,13 @@ function LogIn(props) {
       >
         {(formikProps) => {
           return (
-            <Form className={styles.wrapper}>
-              <h1 className={styles.title}>LOGIN TO YOUR ACCOUNT</h1>
+            <Form className={stylesLog.wrapper}>
+              <h1 className={stylesLog.title}>LOGIN TO YOUR ACCOUNT</h1>
 
-              <label className={styles.wrapperInput}>
+              <label className={stylesLog.wrapperInput}>
                 <Field
-                  className={cx(styles.input, {
-                    [styles.inValidInput]:
+                  className={cx(stylesLog.input, {
+                    [stylesLog.inValidInput]:
                       formikProps.touched.email && formikProps.errors.email,
                   })}
                   type="text"
@@ -40,16 +38,16 @@ function LogIn(props) {
                   placeholder="email@com"
                 />
                 <ErrorMessage
-                  className={styles.error}
+                  className={stylesLog.error}
                   name="email"
                   component="p"
                 />
               </label>
 
-              <label className={styles.wrapperInput}>
+              <label className={stylesLog.wrapperInput}>
                 <Field
-                  className={cx(styles.input, {
-                    [styles.inValidInput]:
+                  className={cx(stylesLog.input, {
+                    [stylesLog.inValidInput]:
                       formikProps.touched.password &&
                       formikProps.errors.password,
                   })}
@@ -58,13 +56,13 @@ function LogIn(props) {
                   placeholder="your password"
                 />
                 <ErrorMessage
-                  className={styles.error}
+                  className={stylesLog.error}
                   name="password"
                   component="p"
                 />
               </label>
 
-              <button className={styles.btnLogIn}>LOGIN</button>
+              <button className={stylesLog.btnLogIn}>LOGIN</button>
             </Form>
           );
         }}

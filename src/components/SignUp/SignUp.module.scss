@@ -1,8 +1,22 @@
 body {
   background-color: rgb(77, 198, 238);
-  position: relative;
 }
 
+.router {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
 
 .wrapper {
   display: flex;
@@ -142,7 +156,9 @@ body {
       font-size: 20px;
     }
   }
-  
+  .router {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 583px) {
@@ -157,11 +173,9 @@ body {
     }
 
     .wrapperGroup {
- 
       .wrapperInput {
         .input {
           padding: 10px;
-
         }
       }
     }
@@ -182,5 +196,9 @@ body {
       font-size: 15px;
     }
   }
-}
 
+  .router {
+    font-size: 10px;
+    top: 3px;
+  }
+}
