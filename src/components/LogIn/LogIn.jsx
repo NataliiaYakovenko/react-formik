@@ -4,7 +4,6 @@ import LOG_IN_SCHEMA from "../../schemas/LogInSchema";
 import styles from "./LogIn.module.scss";
 import cx from "classnames";
 
-import { Link } from "react-router-dom";
 
 const initialState = {
   email: "",
@@ -19,8 +18,7 @@ function LogIn(props) {
 
   return (
     <>
-      <Link className={styles.router} to="/SignUp">SIGN UP</Link>
-
+ 
       <Formik
         initialValues={initialState}
         onSubmit={submitHandler}

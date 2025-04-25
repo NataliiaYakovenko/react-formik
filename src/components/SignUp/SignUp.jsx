@@ -4,7 +4,7 @@ import SIGN_UP_SCHEMA from "../../schemas/SignUpSchema";
 import styles from "./SignUp.module.scss";
 import cx from "classnames";
 
-import {Link} from "react-router-dom";
+
 
 const initialState = {
   firstName: "",
@@ -25,7 +25,6 @@ function SignUp(props) {
 
   return (
     <>
-      <Link className={styles.router}to="/LogIn">LOG IN</Link>
 
       <Formik
         initialValues={initialState}

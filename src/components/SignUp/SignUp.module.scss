@@ -3,18 +3,6 @@ body {
   position: relative;
 }
 
-.router {
-  color: white;
-  position: absolute;
-  left: 85%;
-  top: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 4px;
-}
 
 .wrapper {
   display: flex;
@@ -154,9 +142,7 @@ body {
       font-size: 20px;
     }
   }
-  .router {
-    font-size: 15px;
-  }
+  
 }
 
 @media (max-width: 583px) {
@@ -195,10 +181,6 @@ body {
     .btnLogIn {
       font-size: 15px;
     }
-  }
-  .router {
-    font-size: 10px;
-    top: 3px;
   }
 }
 
